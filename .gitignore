@@ -86,3 +86,7 @@ lint/tmp/
 # lint/reports/
 
 
+# Mac-OS generated files
+.DS_Store
+
+
