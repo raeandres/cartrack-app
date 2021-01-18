@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:id="@+id/login_frame"
-    tools:context=".feature.auth.login.ui.LoginFragment">
+    tools:context=".feature.auth.login.ui.LoginActivity">
 
     <RelativeLayout
         android:layout_width="match_parent"
