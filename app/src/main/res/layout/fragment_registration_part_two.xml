@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:app="http://schemas.android.com/apk/res-auto"
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/background">
+
+    <RelativeLayout
+        android:id="@+id/user_password_registration_card_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/margin_20dp"
+        android:layout_marginEnd="@dimen/margin_50dp"
+        android:layout_marginTop="@dimen/margin_20dp"
+        android:background="@drawable/rounded_layout"
+        android:layout_marginLeft="@dimen/margin_20dp"
+        android:layout_marginRight="@dimen/margin_50dp">
+
+        <EditText
+            android:id="@+id/user_password_registration_et"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:focusable="true"
+            android:inputType="textPassword"
+            android:singleLine="true"
+            android:padding="@dimen/margin_10dp"
+            android:hint="@string/password_hint"
+            android:textColorHint="@color/cardview_dark_background"
+            android:textSize="@dimen/text_14sp"
+            android:background="#00000000"
+            android:drawablePadding="@dimen/margin_10dp"/>
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/user_retype_password_registration_card_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/margin_20dp"
+        android:layout_marginEnd="@dimen/margin_50dp"
+        android:layout_marginTop="@dimen/margin_10dp"
+        android:background="@drawable/rounded_layout"
+        android:layout_below="@+id/user_password_registration_card_view"
+        android:layout_marginLeft="@dimen/margin_20dp"
+        android:layout_marginRight="@dimen/margin_50dp">
+
+        <EditText
+            android:id="@+id/user_retype_password_registration_et"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:focusable="true"
+            android:inputType="textPassword"
+            android:singleLine="true"
+            android:padding="@dimen/margin_10dp"
+            android:hint="@string/title_retype_password"
+            android:textColorHint="@color/cardview_dark_background"
+            android:textSize="@dimen/text_14sp"
+            android:background="#00000000"
+            android:drawablePadding="@dimen/margin_10dp"/>
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/registration_additional_info_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/title_additional_information"
+        android:textColor="@color/white"
+        android:textSize="@dimen/text_14sp"
+        android:layout_marginStart="@dimen/margin_20dp"
+        android:layout_marginTop="@dimen/margin_10dp"
+        android:layout_below="@+id/user_retype_password_registration_card_view"
+        android:layout_marginLeft="@dimen/margin_20dp" />
+
+    <RelativeLayout
+        android:id="@+id/user_security_answer_registration_card_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/margin_20dp"
+        android:layout_marginRight="@dimen/margin_20dp"
+        android:layout_marginTop="@dimen/margin_10dp"
+        android:background="@drawable/rounded_layout"
+        android:layout_marginBottom="@dimen/margin_10dp"
+        android:layout_below="@+id/user_security_question_registration_card_view">
+
+        <EditText
+            android:id="@+id/user_security_answer_registration_et"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:focusable="true"
+            android:inputType="textImeMultiLine"
+            android:singleLine="true"
+            android:padding="@dimen/margin_10dp"
+            android:hint="@string/title_security_answer"
+            android:textColorHint="@color/cardview_dark_background"
+            android:textSize="@dimen/text_14sp"
+            android:background="#00000000"
+            android:drawablePadding="@dimen/margin_10dp"/>
+    </RelativeLayout>
+
+    <Button
+        android:id="@+id/registration_submit_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/margin_20dp"
+        android:layout_marginRight="@dimen/margin_20dp"
+        android:layout_marginTop="@dimen/margin_5dp"
+        android:layout_centerHorizontal="true"
+        android:background="@drawable/button_blue"
+        android:text="@string/title_registration_submit"
+        android:textColor="@color/white"
+        android:layout_below="@+id/user_security_answer_registration_card_view"/>
+
+    <RelativeLayout
+        android:id="@+id/user_security_question_registration_card_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:background="@drawable/rounded_layout"
+        android:layout_below="@+id/registration_additional_info_tv"
+        android:layout_alignStart="@+id/registration_additional_info_tv"
+        android:layout_alignLeft="@+id/registration_additional_info_tv">
+
+        <EditText
+            android:id="@+id/user_security_question_registration_et"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:focusable="true"
+            android:inputType="textImeMultiLine"
+            android:singleLine="true"
+            android:padding="@dimen/margin_10dp"
+            android:hint="@string/title_security_question"
+            android:textColorHint="@color/cardview_dark_background"
+            android:textSize="@dimen/text_14sp"
+            android:background="#00000000"
+            android:drawablePadding="@dimen/margin_10dp"/>
+
+    </RelativeLayout>
+
+</RelativeLayout>

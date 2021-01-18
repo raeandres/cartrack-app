@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:app="http://schemas.android.com/apk/res-auto"
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/background">
+
+    <RelativeLayout
+        android:id="@+id/email_registration_card_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/margin_20dp"
+        android:layout_marginRight="@dimen/margin_20dp"
+        android:layout_marginTop="@dimen/margin_20dp"
+        android:background="@drawable/rounded_layout"
+        android:layout_marginBottom="@dimen/margin_10dp">
+
+        <EditText
+            android:id="@+id/email_name_registration_et"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:focusable="true"
+            android:inputType="textEmailAddress"
+            android:singleLine="true"
+            android:padding="@dimen/margin_10dp"
+            android:hint="@string/title_email"
+            android:textColorHint="@color/cardview_dark_background"
+            android:textSize="@dimen/text_14sp"
+            android:background="#00000000"
+            android:drawablePadding="@dimen/margin_10dp"/>
+
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/suggest_email_registration_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/title_suggest_current_email"
+        android:textSize="@dimen/text_20sp"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="@dimen/margin_20dp"
+        android:layout_below="@+id/email_registration_card_view"
+        android:textColor="@color/applicationColor"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="@dimen/margin_20dp" />
+
+    <TextView
+        android:id="@+id/personal_info_registration_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/title_personal_information"
+        android:layout_marginStart="@dimen/margin_20dp"
+        android:textSize="@dimen/text_16sp"
+        android:layout_marginTop="@dimen/margin_15dp"
+        android:textColor="@color/white"
+        android:layout_below="@+id/suggest_email_registration_tv"
+        android:layout_marginLeft="@dimen/margin_20dp" />
+
+    <RelativeLayout
+        android:id="@+id/person_name_registration_card_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/margin_20dp"
+        android:layout_marginEnd="@dimen/margin_50dp"
+        android:layout_marginTop="@dimen/margin_10dp"
+        android:background="@drawable/rounded_layout"
+        android:layout_below="@+id/personal_info_registration_tv"
+        android:layout_marginLeft="@dimen/margin_20dp"
+        android:layout_marginRight="@dimen/margin_50dp">
+
+        <EditText
+            android:id="@+id/person_name_registration_et"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:focusable="true"
+            android:inputType="textPersonName"
+            android:singleLine="true"
+            android:padding="@dimen/margin_10dp"
+            android:hint="@string/title_name"
+            android:textColorHint="@color/cardview_dark_background"
+            android:textSize="@dimen/text_14sp"
+            android:background="#00000000"
+            android:drawablePadding="@dimen/margin_10dp"/>
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/username_registration_card_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/margin_20dp"
+        android:layout_marginEnd="@dimen/margin_50dp"
+        android:layout_marginTop="@dimen/margin_10dp"
+        android:background="@drawable/rounded_layout"
+        android:layout_marginBottom="@dimen/margin_10dp"
+        android:layout_below="@+id/person_name_registration_card_view"
+        android:layout_marginLeft="@dimen/margin_20dp"
+        android:layout_marginRight="@dimen/margin_50dp">
+
+        <EditText
+            android:id="@+id/username_registration_et"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:focusable="true"
+            android:inputType="textCapWords"
+            android:singleLine="true"
+            android:padding="@dimen/margin_10dp"
+            android:hint="@string/title_preferred_username"
+            android:textColorHint="@color/cardview_dark_background"
+            android:textSize="@dimen/text_14sp"
+            android:background="#00000000"
+            android:drawablePadding="@dimen/margin_10dp"/>
+
+    </RelativeLayout>
+
+
+</RelativeLayout>
