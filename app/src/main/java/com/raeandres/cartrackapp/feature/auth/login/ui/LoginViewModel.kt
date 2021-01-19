@@ -2,26 +2,25 @@ package com.raeandres.cartrackapp.feature.auth.login.ui
 
 import android.app.Application
 import androidx.appcompat.app.AppCompatActivity
-import androidx.lifecycle.AndroidViewModel
 import com.raeandres.cartrackapp.common.android.BaseViewModel
 import com.raeandres.cartrackapp.common.data.persistence.CarTrackDatabase
-import com.raeandres.cartrackapp.common.data.repository.UserRepository
+import com.raeandres.cartrackapp.common.data.repository.CarTrackRepository
 
 class LoginViewModel(application: Application) : BaseViewModel(application) {
 
-    private val loginUserRepository : UserRepository
+    private val loginCarTrackRepository : CarTrackRepository
+
+    private val carTrackDb = CarTrackDatabase.getDatabase(application.applicationContext)
 
     init {
 
-        val userDao = CarTrackDatabase.getDatabase(application.applicationContext).userDao()
-
-        loginUserRepository = UserRepository(userDao)
+        loginCarTrackRepository = CarTrackRepository(carTrackDb.loginDao())
     }
 
     fun attemptToLogin(lifeCycleOwner: AppCompatActivity, username: String?, password: String?,
                        onSuccess: () -> Unit, onError: (String) -> Unit) {
 
-        loginUserRepository.userLogin.observe(lifeCycleOwner, { loginData ->
+        loginCarTrackRepository.login.observe(lifeCycleOwner, { loginData ->
 
             loginData?.apply {
 
