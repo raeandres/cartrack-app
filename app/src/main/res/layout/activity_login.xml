@@ -89,6 +89,41 @@
 
     </RelativeLayout>
 
+    <RelativeLayout
+        android:id="@+id/select_country_layout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/margin_10dp"
+        android:layout_margin="@dimen/margin_30dp"
+        android:layout_alignParentRight="true"
+        android:tooltipText="@string/select_country_title"
+        android:background="@drawable/rounded_layout">
+
+
+
+        <TextView
+            android:id="@+id/country_prefix_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="@dimen/margin_5dp"
+            android:layout_marginRight="@dimen/margin_5dp"
+            android:textAppearance="@style/TextAppearance.AppCompat.Button"
+            android:text="@string/country_prefix_placeholder" />
+
+
+
+        <TextView
+            android:id="@+id/country_name_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_toEndOf="@+id/country_prefix_tv"
+            android:layout_marginRight="@dimen/margin_5dp"
+            android:hint="@string/country_flag_placeholder"/>
+
+    </RelativeLayout>
+
 
     <Button
         android:id="@+id/login_btn"

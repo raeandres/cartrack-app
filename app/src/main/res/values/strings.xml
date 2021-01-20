@@ -17,6 +17,9 @@
     <string name="permission_rationale">"Contacts permissions are needed for providing email
         completions."
     </string>
+    <string name="select_country_title">Select Country</string>
+    <string name="country_prefix_placeholder">PH</string>
+    <string name="country_flag_placeholder">🇵🇭</string>
     <string name="dialog_login_error">Login Error</string>
     <string name="dialog_title_permissions">Persmissions</string>
     <string name="dialog_permission_request_message">%1$s phone requires all permissions to be allowed.</string>
