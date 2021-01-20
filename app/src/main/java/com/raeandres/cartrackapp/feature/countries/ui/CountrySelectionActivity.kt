@@ -52,7 +52,7 @@ class CountrySelectionActivity : BaseActivity() {
 
             }
 
-            mAdapter = CountryListRecyclerViewAdapter(it)
+            mAdapter = CountryListRecyclerViewAdapter(this,it)
             mRecyclerView.adapter = mAdapter
             mRecyclerView.layoutManager = LinearLayoutManager(this)
             mAdapter.notifyDataSetChanged()
