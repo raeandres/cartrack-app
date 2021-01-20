@@ -1,5 +1,7 @@
 package com.raeandres.cartrackapp.feature.auth.login.ui
 
+import android.content.Context
+import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
@@ -11,10 +13,17 @@ import com.raeandres.cartrackapp.common.android.BaseActivity
 import com.raeandres.cartrackapp.common.utilities.InjectorUtil
 import com.raeandres.cartrackapp.common.utilities.RunType
 import com.raeandres.cartrackapp.common.utilities.closeKeyboard
+import com.raeandres.cartrackapp.feature.countries.ui.CountrySelectionActivity
 import com.raeandres.cartrackapp.feature.main.ui.MainActivity
 
 
 class LoginActivity : BaseActivity() {
+
+    companion object {
+        fun startActivity(origin: Context) {
+            origin.startActivity(Intent(origin,LoginActivity::class.java))
+        }
+    }
 
     private lateinit var loginVm : LoginViewModel
 
@@ -45,7 +54,9 @@ class LoginActivity : BaseActivity() {
                 password = password.text.toString(),
                 onSuccess = {
                     //proceed to next screen
+
                     MainActivity.startActivity(this)
+
                     finish()
                 },
                 onError = {
@@ -54,6 +65,11 @@ class LoginActivity : BaseActivity() {
                     closeKeyboard()
                     Snackbar.make(parentLayout, errorMessage, Snackbar.LENGTH_SHORT).show()
                 })
+        }
+
+        findViewById<RelativeLayout>(R.id.select_country_layout).setOnClickListener {
+            closeKeyboard()
+            CountrySelectionActivity.startActivity(this)
         }
     }
 }

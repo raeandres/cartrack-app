@@ -16,6 +16,7 @@
     <color name="textRouteAndDuration">#FF4A4A4A</color>
     <color name="textLight">#FFB3B3B3</color>
     <color name="applicationColor">#FF00CBFE</color>
+    <color name="transparent">#80000000</color>
 
     <color name="black">#000</color>
     <color name="grey">#bcbcbc</color>
