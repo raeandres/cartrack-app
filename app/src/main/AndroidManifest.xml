@@ -10,11 +10,14 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme.NoActionBar">
-        <activity android:name=".feature.countries.ui.CountrySelectionActivity"
-            android:windowSoftInputMode="stateAlwaysHidden"
-            android:theme="@style/Theme.DialogTheme"/>
-        <activity android:name=".feature.main.ui.MainActivity"
-            android:windowSoftInputMode="stateAlwaysHidden"/>
+        <activity android:name=".feature.auth.register.RegistrationActivity"></activity>
+        <activity
+            android:name=".feature.countries.ui.CountrySelectionActivity"
+            android:theme="@style/Theme.DialogTheme"
+            android:windowSoftInputMode="stateAlwaysHidden" />
+        <activity
+            android:name=".feature.main.ui.MainActivity"
+            android:windowSoftInputMode="stateAlwaysHidden" />
         <activity
             android:name=".feature.auth.login.ui.LoginActivity"
             android:windowSoftInputMode="stateAlwaysHidden">
