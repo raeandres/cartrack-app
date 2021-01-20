@@ -21,6 +21,7 @@
         <activity
             android:name=".feature.auth.login.ui.LoginActivity"
             android:windowSoftInputMode="stateAlwaysHidden">
+<!--            android:launchMode="singleInstance">-->
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
