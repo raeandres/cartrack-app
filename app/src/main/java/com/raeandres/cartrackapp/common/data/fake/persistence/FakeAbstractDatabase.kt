@@ -1,13 +1,14 @@
-package com.raeandres.cartrackapp.common.data.fake
+package com.raeandres.cartrackapp.common.data.fake.persistence
 
 import com.raeandres.cartrackapp.common.data.fake.persistence.dao.FakeLoginDao
+import com.raeandres.cartrackapp.common.data.fake.persistence.dao.FakeUserDao
 
 
 abstract class FakeAbstractDatabase(){
 
     abstract fun loginDao(): FakeLoginDao
 
-
+    abstract fun getUserDao(): FakeUserDao
 }
 
 class FakeDatabase : FakeAbstractDatabase() {
@@ -22,6 +23,10 @@ class FakeDatabase : FakeAbstractDatabase() {
 
     override fun loginDao(): FakeLoginDao {
        return FakeLoginDao
+    }
+
+    override fun getUserDao(): FakeUserDao {
+        return FakeUserDao
     }
 
 }

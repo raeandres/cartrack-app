@@ -5,11 +5,11 @@ import androidx.room.Dao
 import androidx.room.Insert
 import androidx.room.OnConflictStrategy
 import androidx.room.Query
-import com.raeandres.cartrackapp.common.data.dao.BaseDao
+import com.raeandres.cartrackapp.common.data.dao.BaseLoginDao
 import com.raeandres.cartrackapp.common.data.real.persistence.entity.Login
 
 @Dao
-interface LoginDao : BaseDao{
+interface LoginDao : BaseLoginDao{
 
     @Insert(onConflict = OnConflictStrategy.IGNORE)
     suspend fun addUser(login: Login)

@@ -3,7 +3,7 @@ package com.raeandres.cartrackapp.feature.auth.login.ui
 import android.app.Application
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
-import com.raeandres.cartrackapp.common.data.real.repository.CarTrackRepository
+import com.raeandres.cartrackapp.common.data.repository.CarTrackRepository
 
 class LoginViewModelFactory( private val application: Application,private val repository: CarTrackRepository) : ViewModelProvider.NewInstanceFactory() {
 

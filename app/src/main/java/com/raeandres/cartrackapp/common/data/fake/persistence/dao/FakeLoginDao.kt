@@ -2,10 +2,10 @@ package com.raeandres.cartrackapp.common.data.fake.persistence.dao
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
-import com.raeandres.cartrackapp.common.data.dao.BaseDao
+import com.raeandres.cartrackapp.common.data.dao.BaseLoginDao
 import com.raeandres.cartrackapp.common.data.real.persistence.entity.Login
 
-interface FakeLoginDao : BaseDao {
+interface FakeLoginDao : BaseLoginDao {
 
     companion object : FakeLoginDao
 

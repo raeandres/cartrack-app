@@ -1,10 +1,9 @@
 package com.raeandres.cartrackapp.common.utilities
 
 import com.raeandres.cartrackapp.common.android.CarTrackApp
-import com.raeandres.cartrackapp.common.data.fake.FakeAbstractDatabase
-import com.raeandres.cartrackapp.common.data.fake.FakeDatabase
+import com.raeandres.cartrackapp.common.data.fake.persistence.FakeDatabase
 import com.raeandres.cartrackapp.common.data.real.persistence.CarTrackDatabase
-import com.raeandres.cartrackapp.common.data.real.repository.CarTrackRepository
+import com.raeandres.cartrackapp.common.data.repository.CarTrackRepository
 import com.raeandres.cartrackapp.feature.auth.login.ui.LoginViewModelFactory
 
 object InjectorUtil {
@@ -20,7 +19,7 @@ object InjectorUtil {
             }
             is RunType.FakeData -> {
                 val fakeDatabase = FakeDatabase.getInstance()
-                val carTrackRepository = CarTrackRepository.getInstance(fakeDatabase.loginDao(), carTrackDatabase.userDao())
+                val carTrackRepository = CarTrackRepository.getInstance(fakeDatabase.loginDao(), fakeDatabase.getUserDao())
                 LoginViewModelFactory(appInstance,carTrackRepository)
             }
         }

@@ -3,8 +3,7 @@ package com.raeandres.cartrackapp.feature.auth.login.ui
 import android.app.Application
 import androidx.appcompat.app.AppCompatActivity
 import com.raeandres.cartrackapp.common.android.BaseViewModel
-import com.raeandres.cartrackapp.common.data.real.persistence.CarTrackDatabase
-import com.raeandres.cartrackapp.common.data.real.repository.CarTrackRepository
+import com.raeandres.cartrackapp.common.data.repository.CarTrackRepository
 
 class LoginViewModel(application: Application, repository: CarTrackRepository) : BaseViewModel(application, repository) {
 
