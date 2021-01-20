@@ -1,4 +1,4 @@
-package com.raeandres.cartrackapp.common.data.persistence.entity
+package com.raeandres.cartrackapp.common.data.real.persistence.entity
 
 import androidx.annotation.NonNull
 import androidx.room.ColumnInfo

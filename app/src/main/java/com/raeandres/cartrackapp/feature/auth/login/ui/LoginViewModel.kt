@@ -3,24 +3,15 @@ package com.raeandres.cartrackapp.feature.auth.login.ui
 import android.app.Application
 import androidx.appcompat.app.AppCompatActivity
 import com.raeandres.cartrackapp.common.android.BaseViewModel
-import com.raeandres.cartrackapp.common.data.persistence.CarTrackDatabase
-import com.raeandres.cartrackapp.common.data.repository.CarTrackRepository
+import com.raeandres.cartrackapp.common.data.real.persistence.CarTrackDatabase
+import com.raeandres.cartrackapp.common.data.real.repository.CarTrackRepository
 
-class LoginViewModel(application: Application) : BaseViewModel(application) {
-
-    private val loginCarTrackRepository : CarTrackRepository
-
-    private val carTrackDb = CarTrackDatabase.getDatabase(application.applicationContext)
-
-    init {
-
-        loginCarTrackRepository = CarTrackRepository(carTrackDb.loginDao())
-    }
+class LoginViewModel(application: Application, repository: CarTrackRepository) : BaseViewModel(application, repository) {
 
     fun attemptToLogin(lifeCycleOwner: AppCompatActivity, username: String?, password: String?,
                        onSuccess: () -> Unit, onError: (String) -> Unit) {
 
-        loginCarTrackRepository.login.observe(lifeCycleOwner, { loginData ->
+        carTrackRepository.login.observe(lifeCycleOwner, { loginData ->
 
             loginData?.apply {
 
@@ -48,14 +39,17 @@ class LoginViewModel(application: Application) : BaseViewModel(application) {
 
                 // attempt to login
                 when {
-                    (username == this.username && password == this.password) -> {
+                    (username.toString() == this.username && password.toString() == this.password) -> {
                         onSuccess.invoke()
+                        return@observe
                     }
                     (username != this.username) -> {
                         onError.invoke("Wrong Username")
+                        return@observe
                     }
                     (username != this.password) -> {
                         onError.invoke("Wrong Password")
+                        return@observe
                     }
                 }
             } ?: onError.invoke("No user data available")

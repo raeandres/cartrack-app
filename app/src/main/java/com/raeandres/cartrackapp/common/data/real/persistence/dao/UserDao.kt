@@ -1,10 +1,10 @@
-package com.raeandres.cartrackapp.common.data.persistence.dao
+package com.raeandres.cartrackapp.common.data.real.persistence.dao
 
 import androidx.lifecycle.LiveData
 import androidx.room.Dao
 import androidx.room.Query
-import com.raeandres.cartrackapp.common.data.persistence.entity.Login
-import com.raeandres.cartrackapp.common.data.persistence.entity.User
+import com.raeandres.cartrackapp.common.data.real.persistence.entity.Login
+import com.raeandres.cartrackapp.common.data.real.persistence.entity.User
 
 @Dao
 interface UserDao {

@@ -1,4 +1,4 @@
-package com.raeandres.cartrackapp.common.data.persistence.entity
+package com.raeandres.cartrackapp.common.data.real.persistence.entity
 
 import androidx.annotation.NonNull
 import androidx.room.ColumnInfo
@@ -31,15 +31,15 @@ data class User(
 
 @Entity(tableName = "user_address")
 data class Address(
-	@ColumnInfo(name = "zip_code")
+    @ColumnInfo(name = "zip_code")
 	val zipcode: String?,
-	@ColumnInfo(name = "geo")
+    @ColumnInfo(name = "geo")
 	val geo: Geo?,
-	@ColumnInfo(name = "suite")
+    @ColumnInfo(name = "suite")
 	val suite: String?,
-	@ColumnInfo(name = "city")
+    @ColumnInfo(name = "city")
 	val city: String?,
-	@ColumnInfo(name = "street")
+    @ColumnInfo(name = "street")
 	val street: String?
 )
 

@@ -1,18 +1,19 @@
-package com.raeandres.cartrackapp.common.data.persistence.dao
+package com.raeandres.cartrackapp.common.data.real.persistence.dao
 
 import androidx.lifecycle.LiveData
 import androidx.room.Dao
 import androidx.room.Insert
 import androidx.room.OnConflictStrategy
 import androidx.room.Query
-import com.raeandres.cartrackapp.common.data.persistence.entity.Login
+import com.raeandres.cartrackapp.common.data.dao.BaseDao
+import com.raeandres.cartrackapp.common.data.real.persistence.entity.Login
 
 @Dao
-interface LoginDao {
+interface LoginDao : BaseDao{
 
     @Insert(onConflict = OnConflictStrategy.IGNORE)
     suspend fun addUser(login: Login)
 
     @Query("SELECT * FROM table_login ORDER BY user_name ASC")
-    fun getUserLogin(): LiveData<Login>
+    override fun getUserLogin(): LiveData<Login>
 }
