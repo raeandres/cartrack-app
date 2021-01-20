@@ -10,7 +10,7 @@ import com.raeandres.cartrackapp.common.utilities.DATA_KEY
 class RegistrationActivity : BaseActivity() {
 
     companion object {
-        fun startActivity(origin: Activity, data: Bundle) {
+        fun startActivity(origin: Activity, data: Bundle? = null) {
             val intent = Intent(origin, RegistrationActivity::class.java).apply {
                 flags = Intent.FLAG_ACTIVITY_CLEAR_TOP
                 putExtra(DATA_KEY,data)

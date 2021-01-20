@@ -12,13 +12,14 @@ import com.google.android.material.snackbar.Snackbar
 import com.raeandres.cartrackapp.R
 import com.raeandres.cartrackapp.common.android.BaseActivity
 import com.raeandres.cartrackapp.common.utilities.*
+import com.raeandres.cartrackapp.feature.auth.register.RegistrationActivity
 import com.raeandres.cartrackapp.feature.countries.ui.CountrySelectionActivity
 import com.raeandres.cartrackapp.feature.main.ui.MainActivity
 
 class LoginActivity : BaseActivity() {
 
     companion object {
-        fun startActivity(origin: Activity, data: Bundle) {
+        fun startActivity(origin: Activity, data: Bundle? = null) {
             val intent = Intent(origin,LoginActivity::class.java).apply {
                 flags = Intent.FLAG_ACTIVITY_CLEAR_TOP
                 putExtra(DATA_KEY,data)
@@ -44,8 +45,15 @@ class LoginActivity : BaseActivity() {
         userName = findViewById(R.id.username_et)
         password = findViewById(R.id.password_et)
 
+
+        
+    }
+
+    override fun onResume() {
+        super.onResume()
+
         intent?.extras?.let { bund ->
-           val bundle = bund.getBundle(DATA_KEY)
+            val bundle = bund.getBundle(DATA_KEY)
 
             bundle?.also {
                 findViewById<TextView>(R.id.country_prefix_tv).text = it.get(COUNTRY_PREFIX_KEY).toString()
@@ -53,13 +61,10 @@ class LoginActivity : BaseActivity() {
             }
 
         }
-        
-    }
-
-    override fun onResume() {
-        super.onResume()
 
         findViewById<Button>(R.id.login_btn).setOnClickListener {
+
+            closeKeyboard()
 
             loginVm.attemptToLogin(this,
                 username = userName.text.toString(),
@@ -69,12 +74,10 @@ class LoginActivity : BaseActivity() {
 
                     MainActivity.startActivity(this)
 
-                    finish()
                 },
                 onError = {
                     // explain the login error
                         errorMessage ->
-                    closeKeyboard()
                     Snackbar.make(parentLayout, errorMessage, Snackbar.LENGTH_SHORT).show()
                 })
         }
@@ -82,6 +85,10 @@ class LoginActivity : BaseActivity() {
         findViewById<RelativeLayout>(R.id.select_country_layout).setOnClickListener {
             closeKeyboard()
             CountrySelectionActivity.startActivity(this)
+        }
+
+        findViewById<TextView>(R.id.registration_tv).setOnClickListener {
+            RegistrationActivity.startActivity(this)
         }
     }
 }
