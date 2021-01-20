@@ -11,11 +11,10 @@ import androidx.cardview.widget.CardView
 import androidx.recyclerview.widget.RecyclerView
 import com.raeandres.cartrackapp.R
 import com.raeandres.cartrackapp.common.data.real.persistence.entity.Country
+import com.raeandres.cartrackapp.common.utilities.COUNTRY_FLAG_KEY
+import com.raeandres.cartrackapp.common.utilities.COUNTRY_NAME_KEY
+import com.raeandres.cartrackapp.common.utilities.COUNTRY_PREFIX_KEY
 import com.raeandres.cartrackapp.feature.auth.login.ui.LoginActivity
-
-const val COUNTRY_PREFIX_KEY = "country_prefix"
-const val COUNTRY_FLAG_KEY = "country_flag"
-const val COUNTRY_NAME_KEY = "country_name"
 
 class CountryListRecyclerViewAdapter (private val activity: Activity, private val countryList:List<Country>) :
         RecyclerView.Adapter<CountryListRecyclerViewAdapter.CountryListViewHolder>() {

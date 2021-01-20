@@ -11,15 +11,10 @@ import androidx.lifecycle.ViewModelProviders
 import com.google.android.material.snackbar.Snackbar
 import com.raeandres.cartrackapp.R
 import com.raeandres.cartrackapp.common.android.BaseActivity
-import com.raeandres.cartrackapp.common.utilities.InjectorUtil
-import com.raeandres.cartrackapp.common.utilities.RunType
-import com.raeandres.cartrackapp.common.utilities.closeKeyboard
-import com.raeandres.cartrackapp.feature.countries.adapter.COUNTRY_FLAG_KEY
-import com.raeandres.cartrackapp.feature.countries.adapter.COUNTRY_PREFIX_KEY
+import com.raeandres.cartrackapp.common.utilities.*
 import com.raeandres.cartrackapp.feature.countries.ui.CountrySelectionActivity
 import com.raeandres.cartrackapp.feature.main.ui.MainActivity
 
-private const val DATA_KEY = "data"
 class LoginActivity : BaseActivity() {
 
     companion object {
